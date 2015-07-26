@@ -1,0 +1,85 @@
+<apex:page controller="trailheadLeaderBoardController" showchat="false" sidebar="false" standardStylesheets="true" showheader="false">
+
+    <style>
+    
+        table {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        h1 {font-size:30px;}
+        h2 {font-size:20px;}
+        
+        .totalpointscolumn
+        {
+            font-size:20px;
+            font-weight: bold;
+        }
+        
+        a:link {
+            text-decoration: none;
+        }
+    </style>
+    
+    <!--Header on the page-->
+    <div id="AppBodyHeader" class="bPageHeader">
+    <table id="phHeader" class="phHeader brandZeronaryBgr" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="left">
+            <img src="/img/seasonLogos/2015_summer.png" alt="Salesforce.com" width="175" height="65" id="phHeaderLogoImage" title="Salesforce.com">
+            </img>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+    <!--table that contains images and the countdown -->
+    <table>
+        <!--Here is where you can put user group logos, just load a static resource-->
+        <!--<tr>
+        <td align="center">
+            <apex:image url="{!$Resource.cltdg}"/>
+            &nbsp;
+            <apex:image url="{!$Resource.cltug}" height="40%"/>
+        </td>
+        </tr>-->
+        <tr><td align="center"><h1>{!trailsettings.Header_Message__c}</h1><br/><br/></td></tr>
+        <tr><td align="center"><h2>
+    
+        <script language="JavaScript">
+        TargetDate = "{!trailsettings.Target_Time__c}";
+        BackColor = "";
+        ForeColor = "black";
+        CountActive = true;
+        CountStepper = -1;
+        LeadingZero = true;
+        DisplayFormat = "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+        FinishMessage = "{!trailsettings.Finish_Message__c}";
+        </script>
+        &nbsp;&nbsp; <script src="{!URLFOR($Resource.countdown, 'countdown.js')}">
+        </script> 
+    
+        </h2></td></tr>
+    
+    
+    </table>
+    <br/>
+    <br/>
+
+    <!--Table that contains the leaderboard-->
+      <apex:form >
+      
+      <apex:pageblock >
+          <apex:pageblocktable value="{!contacts}" var="cw">
+              
+              <apex:column headervalue="Rank" value="{!cw.count}" />
+              <apex:column headerValue="Trailblazer" value="{!cw.c.Name}" styleclass="totalpointscolumn"/>
+              <apex:column headervalue="Points Today" value="{!cw.c.Points_Today__c}" styleclass="totalpointscolumn"/>
+              <apex:column headervalue="Check In Points" value="{!cw.c.Points_Check_In__c}"/>
+              <apex:column headervalue="Total Points" value="{!cw.c.Total_Points__c}"/>
+              <apex:column headervalue="Trailblazer on Twitter" value="{!cw.c.Twitter_URL__c}"/>
+              
+          </apex:pageblocktable>
+      </apex:pageblock>
+      </apex:form>
+</apex:page>
