@@ -26,8 +26,10 @@
     <table id="phHeader" class="phHeader brandZeronaryBgr" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td class="left">
-            <img src="/img/seasonLogos/2015_summer.png" alt="Salesforce.com" width="175" height="65" id="phHeaderLogoImage" title="Salesforce.com">
+            <a href="/">
+            <img src="/img/seasonLogos/2015_summer.png" alt="Salesforce.com" width="175" height="65" id="phHeaderLogoImage" title="Salesforce.com" >
             </img>
+            </a>
             </td>
         </tr>
     </table>
@@ -73,7 +75,11 @@
           <apex:pageblocktable value="{!contacts}" var="cw">
               
               <apex:column headervalue="Rank" value="{!cw.count}" />
-              <apex:column headerValue="Trailblazer" value="{!cw.c.Name}" styleclass="totalpointscolumn"/>
+              <apex:column headerValue="Trailblazer" styleclass="totalpointscolumn">
+                <a href="https://developer.salesforce.com/forums/ForumsTrailheadProfile?userId={!cw.c.SF_Dev_User_Id__c}" target="_blank">
+                    <apex:outputText value="{!cw.c.Name}" />
+                </a>
+              </apex:column>
               <apex:column headervalue="Points Today" value="{!cw.c.Points_Today__c}" styleclass="totalpointscolumn"/>
               <apex:column headervalue="Check In Points" value="{!cw.c.Points_Check_In__c}"/>
               <apex:column headervalue="Total Points" value="{!cw.c.Total_Points__c}"/>
