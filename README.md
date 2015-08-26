@@ -1,7 +1,8 @@
 # Trailhead-Leaderboard
 As part of the Salesforce Summer of Trailhead event we built a trailhead leaderboard that ran in a developer org.  Feel free to use this at your event, or any event for that matter where a point tracking leaderboard is used.  
 
-This has been uploaded as an unmanaged package here: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t370000001V3r
+This has been uploaded as an unmanaged package here:
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t370000001V3w
 
 
 <b>Summary</b>
