@@ -2,11 +2,18 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>trailheadLeaderBoardController</members>
+        <members>trailheadLeaderBoardControllerLEX</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>trailheadLeaderBoard</members>
+        <members>trailheadLeaderBoard_LC</members>
+        <members>trailheadLeaderBoard_SLDS</members>
         <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
     </types>
     <types>
         <members>Contact</members>
@@ -25,5 +32,5 @@
         <members>countdown</members>
         <name>StaticResource</name>
     </types>
-    <version>31.0</version>
+    <version>36.0</version>
 </Package>

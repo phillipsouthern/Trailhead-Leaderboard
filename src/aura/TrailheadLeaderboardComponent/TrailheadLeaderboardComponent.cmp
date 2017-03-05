@@ -1,0 +1,84 @@
+<aura:component controller="trailheadLeaderBoardControllerLEX" implements="flexipage:availableForAllPageTypes" >
+    
+    <aura:attribute name="contacts" type="ContactWrapper[]"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    
+    <article class="slds-card">
+
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+
+                </div>
+                <div class="slds-media__body slds-truncate">
+                    
+                </div>
+            </header>
+			<!--<div class="slds-no-flex">
+               <ui:button label="New" press="{!c.createCase}"/>
+            </div>-->
+        </div>
+        <div class="slds-card__body">
+            <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                <thead>
+                    <tr class="slds-text-title--caps">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Rank">Rank</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Trailblazer">Trailblazer</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Points Today">Points Today</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Check In Points">Check In Points</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Total Points">Total Points</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+						<aura:iteration items="{!v.contacts}" var="cnt">
+                        <tr>
+                            <td data-label="Rank">
+                                <div class="slds-truncate" title="{!cnt.count}">{!cnt.count}</div>
+                            </td>
+							<td scope="row" data-label="Trailblazer">
+                                <div class="slds-truncate" title="{!cnt.c.Name}">
+                                    <a href="{!'#/sObject/'+cnt.c.Id+'/view'}" data-record="{!cnt.c.Name}">
+                                    {!cnt.c.Name}
+                                    </a>
+                                </div>
+                            </td>
+                            <td data-label="Points Today">
+                                <div class="slds-truncate" title="{!cnt.c.Points_Today__c}">
+                                    <b>
+                                        <ui:outputNumber format="#,###,##0" value="{!cnt.c.Points_Today__c}"/>
+                                    </b>
+                                </div>
+                            </td>
+                            <td data-label="Check In Points">
+                                <div class="slds-truncate" title="{!cnt.c.Points_Check_In__c}">
+                                    <ui:outputNumber format="#,###,##0" value="{!cnt.c.Points_Check_In__c}"/>
+                                </div>
+                            </td>
+                            <td data-label="Total Points">
+                                <div class="slds-truncate" title="{!cnt.c.Total_Points__c}">
+                                    <ui:outputNumber format="#,###,##0" value="{!cnt.c.Total_Points__c}"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </article>
+    
+	
+</aura:component>

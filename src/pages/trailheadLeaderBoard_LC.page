@@ -1,5 +1,5 @@
-<apex:page controller="trailheadLeaderBoardController" showchat="false" sidebar="false" standardStylesheets="true" showheader="false">
-
+<apex:page controller="trailheadLeaderBoardControllerLEX" showchat="false" sidebar="false" standardStylesheets="true" showheader="false">
+    <apex:includeLightning />
     <style>
     
         table {
@@ -20,6 +20,8 @@
             text-decoration: none;
         }
     </style>
+    
+    
     
     <!--Header on the page-->
     <div id="AppBodyHeader" class="bPageHeader">
@@ -69,23 +71,19 @@
     <br/>
 
     <!--Table that contains the leaderboard-->
-      <apex:form >
+    
+    <div id="lightning" />
+
+    <script>
+        $Lightning.use("c:TrailheadLeaderboardApp", function() {
+          $Lightning.createComponent("c:TrailheadLeaderboardComponent",
+          {  },
+          "lightning",
+          function(cmp) {
+            // do some stuff
+          });
+        });
+    </script>
+
       
-      <apex:pageblock >
-          <apex:pageblocktable value="{!contacts}" var="cw">
-              
-              <apex:column headervalue="Rank" value="{!cw.count}" />
-              <apex:column headerValue="Trailblazer" styleclass="totalpointscolumn">
-                <a href="https://developer.salesforce.com/forums/ForumsTrailheadProfile?userId={!cw.c.SF_Dev_User_Id__c}" target="_blank">
-                    <apex:outputText value="{!cw.c.Name}" />
-                </a>
-              </apex:column>
-              <apex:column headervalue="Points Today" value="{!cw.c.Points_Today__c}" styleclass="totalpointscolumn"/>
-              <apex:column headervalue="Check In Points" value="{!cw.c.Points_Check_In__c}"/>
-              <apex:column headervalue="Total Points" value="{!cw.c.Total_Points__c}"/>
-              <apex:column headervalue="Trailblazer on Twitter" value="{!cw.c.Twitter_URL__c}"/>
-              
-          </apex:pageblocktable>
-      </apex:pageblock>
-      </apex:form>
 </apex:page>

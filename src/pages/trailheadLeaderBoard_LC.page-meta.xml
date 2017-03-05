@@ -3,5 +3,5 @@
     <apiVersion>34.0</apiVersion>
     <availableInTouch>true</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <label>trailheadLeaderBoard</label>
+    <label>trailheadLeaderBoard_LC</label>
 </ApexPage>

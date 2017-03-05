@@ -1,5 +1,5 @@
 <apex:page controller="trailheadLeaderBoardController" showchat="false" sidebar="false" standardStylesheets="true" showheader="false">
-
+    <apex:slds />
     <style>
     
         table {
