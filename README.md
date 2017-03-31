@@ -26,3 +26,9 @@ A recordtype and custom list view are included for easy edit.  A page layout for
 -To access the Visualforce page, I've included a Custom Link "Trailhead Leaderboard" you can add to your homepage.  You can also browse to "/apex/trailheadLeaderBoard" in your environment.
 
 
+<b>Update 03/31/2017</b>
+For Southeast Dreamin 2017 we added a Lightning Component and its used (with Lightning Out) in a new Visualforce page: trailheadLeaderBoard_LC
+
+We also added new fields on the Contact tracking badges and trails, along with tracking hourly points.
+
+Automation has been added with class Queueable_GetTrailheadData (caution: its doing a screen scrape) and with some apex scripts AutomationScripts.cls which will do a mass check-in for all participants, clear out hourly points, and call the Queueable_GetTrailheadData class.
