@@ -34,10 +34,19 @@
                             <div class="slds-truncate" title="Points Today">Points Today</div>
                         </th>
                         <th scope="col">
+                            <div class="slds-truncate" title="Total Points">Points This Hour</div>
+                        </th>
+                        <th scope="col">
                             <div class="slds-truncate" title="Check In Points">Check In Points</div>
                         </th>
                         <th scope="col">
                             <div class="slds-truncate" title="Total Points">Total Points</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Total Points">Badges Today</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Total Points">Trails Today</div>
                         </th>
                     </tr>
                 </thead>
@@ -48,9 +57,9 @@
                                 <div class="slds-truncate" title="{!cnt.count}">{!cnt.count}</div>
                             </td>
 							<td scope="row" data-label="Trailblazer">
-                                <div class="slds-truncate" title="{!cnt.c.Name}">
-                                    <a href="{!'#/sObject/'+cnt.c.Id+'/view'}" data-record="{!cnt.c.Name}">
-                                    {!cnt.c.Name}
+                                <div class="slds-truncate" title="{!cnt.c.Display_Name__c}">
+                                    <a href="{!'/one/one.app#/sObject/'+cnt.c.Id+'/view'}" data-record="{!cnt.c.Display_Name__c}" target="_blank">
+                                    {!cnt.c.Display_Name__c}
                                     </a>
                                 </div>
                             </td>
@@ -58,6 +67,13 @@
                                 <div class="slds-truncate" title="{!cnt.c.Points_Today__c}">
                                     <b>
                                         <ui:outputNumber format="#,###,##0" value="{!cnt.c.Points_Today__c}"/>
+                                    </b>
+                                </div>
+                            </td>
+                            <td data-label="Points Today">
+                                <div class="slds-truncate" title="{!cnt.c.Points_This_Hour__c}">
+                                    <b>
+                                        <ui:outputNumber format="#,###,##0" value="{!cnt.c.Points_This_Hour__c}"/>
                                     </b>
                                 </div>
                             </td>
@@ -69,6 +85,16 @@
                             <td data-label="Total Points">
                                 <div class="slds-truncate" title="{!cnt.c.Total_Points__c}">
                                     <ui:outputNumber format="#,###,##0" value="{!cnt.c.Total_Points__c}"/>
+                                </div>
+                            </td>
+                            <td data-label="Badges Today">
+                                <div class="slds-truncate" title="{!cnt.c.Badges_Today__c}">
+                                    <ui:outputNumber format="#,###,##0" value="{!cnt.c.Badges_Today__c}"/>
+                                </div>
+                            </td>
+                            <td data-label="Trails Today">
+                                <div class="slds-truncate" title="{!cnt.c.Trails_Today__c}">
+                                    <ui:outputNumber format="#,###,##0" value="{!cnt.c.Trails_Today__c}"/>
                                 </div>
                             </td>
                         </tr>

@@ -74,7 +74,11 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>ViewCustomerPortal</actionName>
@@ -97,12 +101,43 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>AssistantName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>AssistantPhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Badges_Check_In__c</fullName>
+        <externalId>false</externalId>
+        <label>Badges Check In</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Badges_Today__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Badges__c -  Badges_Check_In__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Badges Today</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Birthdate</fullName>
@@ -119,6 +154,16 @@
     <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Display_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Display Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>DoNotCall</fullName>
@@ -163,6 +208,14 @@
     </fields>
     <fields>
         <fullName>LastCUUpdateDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Last_Check__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Check</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>LeadSource</fullName>
@@ -256,6 +309,30 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Points_Last_Hour_Check_In__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Points an individual had at the top of the hour check-in</inlineHelpText>
+        <label>Points Last Hour Check In</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Points_This_Hour__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Points__c - Points_Last_Hour_Check_In__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Points This Hour</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Points_Today__c</fullName>
         <externalId>false</externalId>
         <formula>Total_Points__c - Points_Check_In__c</formula>
@@ -287,6 +364,17 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Total_Badges__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Badges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Total_Points__c</fullName>
         <externalId>false</externalId>
         <label>Total Points</label>
@@ -298,13 +386,47 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Total_Trails__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Trails</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Trailhead_URL__c</fullName>
         <externalId>false</externalId>
-        <formula>hyperlink(&quot;https://developer.salesforce.com/forums/ForumsTrailheadProfile?userId=&quot;+ SF_Dev_User_Id__c ,&quot;TrailheadURL&quot;,&quot;_blank&quot;)</formula>
+        <formula>hyperlink(&quot;https://trailhead.salesforce.com/users/profiles/&quot;+ SF_Dev_User_Id__c ,&quot;TrailheadURL&quot;,&quot;_blank&quot;)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Trailhead URL</label>
         <required>false</required>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trails_Check_In__c</fullName>
+        <externalId>false</externalId>
+        <label>Trails Check In</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trails_Today__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Trails__c -  Trails_Check_In__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Trails Today</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -366,6 +488,21 @@
             <value>THIS_WEEK</value>
         </filters>
         <label>New This Week</label>
+    </listViews>
+    <listViews>
+        <fullName>Trailhead_Active_Contacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>Last_Check__c</columns>
+        <columns>Points_This_Hour__c</columns>
+        <columns>Points_Last_Hour_Check_In__c</columns>
+        <columns>Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Trailhead Active Contacts</label>
     </listViews>
     <listViews>
         <fullName>Trailhead_Leaderboard</fullName>

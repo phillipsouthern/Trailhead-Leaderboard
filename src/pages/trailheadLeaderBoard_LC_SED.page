@@ -34,12 +34,12 @@
     
     
     <!--Header on the page-->
-    <div id="AppBodyHeader" class="bPageHeader">
-    <table id="phHeader" class="phHeader brandZeronaryBgr" border="0" cellspacing="0" cellpadding="0">
+    <div ><!--id="AppBodyHeader" class="bPageHeader">-->
+    <table ><!--id="phHeader" class="phHeader brandZeronaryBgr" border="0" cellspacing="0" cellpadding="0">-->
         <tr>
             <td class="left" style="font-size: 14px;">
             <a href="/">
-            <img src="/img/salesforce-noname-logo.svg?width=128&height=128" alt="Salesforce.com" width="175" height="65" id="phHeaderLogoImage" title="Salesforce.com" />
+            <!--<img src="/img/salesforce-noname-logo.svg?width=128&height=128" alt="Salesforce.com" width="175" height="65" id="phHeaderLogoImage" title="Salesforce.com" />-->
             </a>
             </td>
         </tr>
@@ -51,16 +51,15 @@
         <!--Here is where you can put user group logos, just load a static resource-->
         <tr>
         <td align="center">
-        
-            <!-- You can put a logo or image here if you want.  Load as a static resource
-            example:
-            <apex:image url="{!$Resource.cltdg}"/>
-            -->
-            
+            <!--<apex:image url="{!$Resource.cltdg}"/>
+            &nbsp;
+            <apex:image url="{!$Resource.cltug}" height="40%"/>-->
+
+            <img src="{!$Resource.sedLogo}" /> 
             <br/><br/>
         </td>
         </tr>
-        <tr><td align="center"><h1>Trailhead Leaderboard</h1><br/><br/></td></tr>
+        <tr><td align="center"><h1>Trailhead-athon 2017!</h1><br/><br/></td></tr>
         <tr><td align="center"><h2>
         {!trailsettings.Header_Message__c} <br/> <br/>
         <!-- example target time 07/26/2015 1:00 PM UTC-0630 -->
@@ -84,7 +83,7 @@
     <br/>
     <br/>
 
-    <!--Table that contains the leaderboard-->
+    <!--Table component that contains the leaderboard-->
     
     <div id="lightning" />
 
